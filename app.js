@@ -6,7 +6,7 @@ app.get("/", (req, res) => res.type('html').send(html));
 
 app.get("/api", (req,res)=>{
     res.json({"users":["User1, user2, user3, User4"]})
-    console.log( res.json({"users":["User1, user2, user3, User4"]}))
+   
   } )
 
 const server = app.listen(port, () => console.log(`Example app listening on port ${port}!`));
