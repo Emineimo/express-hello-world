@@ -12,7 +12,7 @@ app.get("/api", (req,res)=>{
 app.post('/api/postData', (req, res) => {
     const { data } = req.body;
     console.log('Received data:', data);
-    res.json({ message: 'Data received successfully!',data });
+    res.json({ message: 'Data received successfully!' });
   });
 
 const server = app.listen(port, () => console.log(`Example app listening on port ${port}!`));
