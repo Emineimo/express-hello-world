@@ -17,7 +17,7 @@ app.post('/api/postData', (req, res) => {
         status:"Sucsess",
         Name: data.studentName,
         Class: data.Class
-        message: `New Data received successfully! ${data.studentName}` });
+        message: 'New Data received successfully!' });
   });
 
 const server = app.listen(port, () => console.log(`Example app listening on port ${port}!`));
