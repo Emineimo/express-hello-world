@@ -9,6 +9,12 @@ app.get("/api", (req,res)=>{
    console.log( res.json({"users":["User1, user2, user3, User4"]}))
   } )
 
+app.post('/api/postData', (req, res) => {
+    const { data } = req.body;
+    console.log('Received data:', data);
+    res.json({ message: 'Data received successfully!' });
+  });
+
 const server = app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
 server.keepAliveTimeout = 120 * 1000;
