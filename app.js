@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const port = process.env.PORT || 3001;
 
+app.use(express.json());
 app.get("/", (req, res) => res.type('html').send(html));
 
 app.get("/api", (req,res)=>{
@@ -10,9 +11,13 @@ app.get("/api", (req,res)=>{
   } )
 
 app.post('/api/postData', (req, res) => {
-    const { data } = req.body;
+    const  data  = req.body;
     console.log('Received data:', data);
-    res.json({ message: 'Data received successfully!' });
+    res.json({
+        status:"Sucsess",
+        Name: data.studentName,
+        Class: data.Class
+        message: `New Data received successfully! ${data.studentName}` });
   });
 
 const server = app.listen(port, () => console.log(`Example app listening on port ${port}!`));
